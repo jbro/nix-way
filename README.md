@@ -14,7 +14,7 @@ Create a NixOS install iso:
 
 Boot the intall iso.
 
-Partion the internal drive with (disko)[https://github.com/nix-community/disko] (optional, **will wipe all drives**):
+Partion the internal drive with [disko](https://github.com/nix-community/disko) (optional, **will wipe all drives**):
 
     $ nix run github:jbro/nix-way#format-disks iota
 
