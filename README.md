@@ -46,6 +46,6 @@ Install:
 
 ## Resources
 
-(hMasur's dotfiles)[ttps://github.com/nmasur/dotfiles]
-(Misterio77's nixos flake templates)[https://github.com/Misterio77/nix-starter-configs]
-(Misterio77's nix config)[https://github.com/Misterio77/nix-config]
+[hMasur's dotfiles](https://github.com/nmasur/dotfiles)
+[Misterio77's nixos flake templates](https://github.com/Misterio77/nix-starter-configs)
+[Misterio77's nix config](https://github.com/Misterio77/nix-config)
