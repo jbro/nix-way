@@ -20,11 +20,11 @@ Partion the internal drive with [disko](https://github.com/nix-community/disko) 
 
 Mount volumes:
 
-    $ nix run github.com:jbro/nix-way#mount-disks iota
+    $ nix run github:jbro/nix-way#mount-disks iota
     
 Install:
 
-    $ nix run github.com:jbro/nix-way#install iota
+    $ nix run github:jbro/nix-way#install iota
 
 ## TODO
 
@@ -43,6 +43,7 @@ Install:
 
     * Homemanager
         * Window manager of some sort
+    * Disable sshd
 
 ## Resources
 
