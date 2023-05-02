@@ -16,6 +16,8 @@
 
     inputs.lanzaboote.nixosModules.lanzaboote
 
+    inputs.home-manager.nixosModules.home-manager
+
     ../../modules/btrfs_swap.nix
   ];
 
@@ -100,40 +102,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    rnix-lsp
-    elinks
-    git
-    ripgrep
-  ];
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    configure = {
-      customRC = ''
-        set number
-        colorscheme gruvbox
-        set mouse=
-      '';
-      packages.all = with pkgs.vimPlugins; {
-        start = [
-          (nvim-treesitter.withPlugins (ps: [ps.nix]))
-          nvim-lspconfig
-          vim-commentary
-          nvim-cmp
-          cmp-nvim-lsp
-          cmp-buffer
-          cmp-nvim-lua
-          vim-nix
-          gruvbox-nvim
-        ];
-      };
-    };
-  };
-
   security.sudo.extraRules = [
     {
       groups = ["wheel"];
@@ -153,6 +121,11 @@
     description = "Jesper B. Rosenkilde";
     extraGroups = ["wheel" "tss"];
     passwordFile = config.sops.secrets.jbr-password-hash.path;
+  };
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.jbr = import ../../users/jbr;
   };
 
   system.stateVersion = "22.11";

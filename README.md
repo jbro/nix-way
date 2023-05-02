@@ -37,12 +37,14 @@ Install:
 
 ### Install
 
+    * Move secure boot keys into sops
     * Create USB media that can boot with secure boot my my cutsom keys
 
 ### Iota
 
     * Homemanager
         * Window manager of some sort
+        * Look at stylix
     * Disable sshd
 
 ## Resources
