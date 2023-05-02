@@ -16,8 +16,6 @@
 
     inputs.lanzaboote.nixosModules.lanzaboote
 
-    inputs.home-manager.nixosModules.home-manager
-
     ../../modules/btrfs_swap.nix
   ];
 
@@ -102,6 +100,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  security.polkit.enable = true;
   security.sudo.extraRules = [
     {
       groups = ["wheel"];
@@ -121,11 +120,6 @@
     description = "Jesper B. Rosenkilde";
     extraGroups = ["wheel" "tss"];
     passwordFile = config.sops.secrets.jbr-password-hash.path;
-  };
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.jbr = import ../../users/jbr;
   };
 
   system.stateVersion = "22.11";

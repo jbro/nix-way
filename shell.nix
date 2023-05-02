@@ -12,11 +12,16 @@
     nativeBuildInputs = with pkgs; [
       nix
       home-manager
+      git
+
       sops
       age
+
       tpm2-tools
       clevis
+
       nixos-generators
+
       sbctl
     ];
   };

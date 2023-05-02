@@ -39,6 +39,8 @@ Install:
 
     * Move secure boot keys into sops
     * Create USB media that can boot with secure boot my my cutsom keys
+    * document first use of home-manager
+        * add to install script ?
 
 ### Iota
 

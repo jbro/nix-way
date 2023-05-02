@@ -1,27 +1,27 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
-  imports = [];
+  imports = [inputs.hyprland.homeManagerModules.default];
 
   home = {
     username = "jbr";
     homeDirectory = "/home/jbr";
     stateVersion = "22.11";
+    sessionVariables = {
+      LIBSEAT_BACKEND = "logind";
+    };
   };
+
+  programs.home-manager.enable = true;
 
   programs.git = {
     enable = true;
     userName = "Jesper B. Rosenkilde";
     userEmail = "jbr@humppa.dk";
   };
-
-  home.packages = with pkgs; [
-    ripgrep
-  ];
-
-  programs.home-manager.enable = true;
 
   programs.neovim = {
     enable = true;
@@ -42,6 +42,20 @@
     extraPackages = with pkgs; [
       # rnix-lsp
     ];
+  };
+
+  programs.kitty.enable = true;
+
+  programs.bash.enable = true;
+
+  home.packages = with pkgs; [
+    ripgrep
+  ];
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.default;
+    extraConfig = import ./hyprland-config.nix {};
   };
 
   systemd.user.startServices = "sd-switch";

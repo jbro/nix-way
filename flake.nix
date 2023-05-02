@@ -20,6 +20,8 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    hyprland.url = "github:hyprwm/Hyprland";
   };
   outputs = {
     self,
@@ -28,6 +30,8 @@
     disko,
     sops-nix,
     nixos-generators,
+    home-manager,
+    hyprland,
     ...
   } @ inputs: let
     forEachSystem = nixpkgs.lib.genAttrs ["x86_64-linux"];
@@ -41,6 +45,16 @@
       "iota" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [./hosts/iota];
+      };
+    };
+    homeConfigurations = {
+      specialArgs = {inherit inputs;};
+      useUserPackages = true;
+      useGlobalPkgs = true;
+      "jbr@iota" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs;};
+        modules = [./home-manager/iota/jbr.nix];
       };
     };
     diskoConfigurations = {"iota" = import ./hosts/iota/disko.nix;};
