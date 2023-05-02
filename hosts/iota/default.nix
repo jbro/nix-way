@@ -47,6 +47,18 @@
       jbr-password-hash = {
         neededForUsers = true;
       };
+      "jbr-ssh/pub" = {
+        owner = "jbr";
+        group = "users";
+        mode = "600";
+        path = "/home/jbr/.ssh/id_ed25519.pub";
+      };
+      "jbr-ssh/priv" = {
+        owner = "jbr";
+        group = "users";
+        mode = "600";
+        path = "/home/jbr/.ssh/id_ed25519";
+      };
     };
   };
 
