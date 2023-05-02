@@ -1,0 +1,3 @@
+creation_rules:
+  - path_regex: hosts/iota/secrets.yaml
+    age: age12lfn5e9j0r9s7ehged9k7z70svxl3tp9h722netl2jdyh8y3psgspr3taw
