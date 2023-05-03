@@ -104,7 +104,6 @@
     package = inputs.hyprland.packages.${pkgs.system}.default;
   };
   programs.git.enable = true;
-  programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
