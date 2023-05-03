@@ -54,6 +54,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.default;
     recommendedEnvironment = true;
     systemdIntegration = true;
     extraConfig = import ./hyprland-config.nix {};
