@@ -7,7 +7,6 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    inputs.nixos-hardware.nixosModules.gpd-pocket-3
 
     inputs.disko.nixosModules.disko
     ./disko.nix
