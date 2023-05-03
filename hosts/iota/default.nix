@@ -15,11 +15,18 @@
 
     inputs.lanzaboote.nixosModules.lanzaboote
 
+    inputs.hyprland.nixosModules.default
+
     ../../modules/btrfs_swap.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.auto-optimise-store = true;
+
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
 
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_2;
 
@@ -97,9 +104,11 @@
     btrfs-swapfile.enable = true;
   };
 
+  programs.hyprland.enable = true;
+  programs.git.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
-  security.polkit.enable = true;
   security.sudo.extraRules = [
     {
       groups = ["wheel"];

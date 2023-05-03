@@ -49,8 +49,6 @@
     };
     homeConfigurations = {
       specialArgs = {inherit inputs;};
-      useUserPackages = true;
-      useGlobalPkgs = true;
       "jbr@iota" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs;};
