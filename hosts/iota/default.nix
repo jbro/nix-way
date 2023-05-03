@@ -104,7 +104,10 @@
     btrfs-swapfile.enable = true;
   };
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.default;
+  };
   programs.git.enable = true;
 
   nixpkgs.config.allowUnfree = true;
