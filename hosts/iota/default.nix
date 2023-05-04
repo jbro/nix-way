@@ -115,6 +115,7 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
+  home-manager.users.jbr = import ../../home-manager/iota/jbr.nix {inherit pkgs inputs;};
 
   security.sudo.extraRules = [
     {

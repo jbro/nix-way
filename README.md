@@ -26,10 +26,6 @@ Install NixOS:
 
     $ nix run github:jbro/nix-way#install iota
     
-Set up user:
-
-    $ nix run github:jbro/nix-way#homeConfigurations.jbr@iota.activationPackage
-    
 ## TODO
 
 ### NixOS
@@ -49,6 +45,9 @@ Set up user:
     * Homemanager
         * Window manager of some sort
         * Look at stylix
+        * port zsh
+        * port vimrc ?
+    * Plymouth
     * Disable sshd
 
 ## Resources
