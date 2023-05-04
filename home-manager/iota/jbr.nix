@@ -47,6 +47,10 @@
 
   programs.bash.enable = true;
 
+  programs.firefox.enable = true;
+
+  programs.wofi.enable = true;
+
   home.packages = with pkgs; [
     ripgrep
   ];
