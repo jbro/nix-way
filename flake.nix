@@ -20,8 +20,6 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    hyprland.url = "github:hyprwm/Hyprland";
   };
   outputs = {
     self,
@@ -31,7 +29,6 @@
     sops-nix,
     nixos-generators,
     home-manager,
-    hyprland,
     ...
   } @ inputs: let
     forEachSystem = nixpkgs.lib.genAttrs ["x86_64-linux"];

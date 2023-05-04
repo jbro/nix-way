@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  imports = [inputs.hyprland.homeManagerModules.default];
+  imports = [];
 
   home = {
     username = "jbr";
@@ -55,12 +55,22 @@
     ripgrep
   ];
 
-  wayland.windowManager.hyprland = {
+  wayland.windowManager.sway = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.default;
-    recommendedEnvironment = true;
     systemdIntegration = true;
-    extraConfig = import ./hyprland-config.nix {};
+    config = rec {
+      modifier = "Mod4";
+      terminal = "kitty";
+      startup = [
+        {command = "firefox";}
+      ];
+      output = {
+        "DSI-1" = {
+          scale = "1.5";
+          transform = "90";
+        };
+      };
+    };
   };
 
   systemd.user.startServices = "sd-switch";

@@ -15,8 +15,6 @@
 
     inputs.lanzaboote.nixosModules.lanzaboote
 
-    inputs.hyprland.nixosModules.default
-
     inputs.home-manager.nixosModules.home-manager
 
     ../../modules/btrfs_swap.nix
@@ -87,6 +85,8 @@
   security.tpm2.pkcs11.enable = true;
   security.tpm2.tctiEnvironment.enable = true;
 
+  security.polkit.enable = true;
+
   time.timeZone = "Europe/Copenhagen";
 
   services = {
@@ -101,14 +101,6 @@
     btrfs-swapfile.enable = true;
   };
 
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.default;
-  };
   programs.git.enable = true;
 
   nixpkgs.config.allowUnfree = true;
