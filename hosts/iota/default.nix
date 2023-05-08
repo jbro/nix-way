@@ -89,6 +89,9 @@
 
   time.timeZone = "Europe/Copenhagen";
 
+  hardware.opengl.enable = true;
+  hardware.opengl.driSupport = true;
+
   services = {
     openssh = {
       enable = true;
