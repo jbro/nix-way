@@ -9,9 +9,6 @@
     config = rec {
       modifier = "Mod4";
       terminal = "kitty";
-      startup = [
-        {command = "firefox";}
-      ];
       output = {
         "DSI-1" = {
           scale = "1.5";
@@ -21,4 +18,3 @@
     };
   };
 }
-
