@@ -27,5 +27,7 @@
     ripgrep
   ];
 
+  fonts.fontconfig.enable = true;
+
   systemd.user.startServices = "sd-switch";
 }
