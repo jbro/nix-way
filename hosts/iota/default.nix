@@ -17,7 +17,7 @@
 
     inputs.home-manager.nixosModules.home-manager
 
-    ../../modules/btrfs_swap.nix
+    "${inputs.self}/modules/btrfs_swap.nix"
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -107,7 +107,7 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.jbr = import ../../home-manager/iota/jbr.nix {inherit pkgs inputs;};
+  home-manager.users.jbr = import "${inputs.self}/users/jbr.nix" {inherit pkgs inputs;};
 
   security.sudo.extraRules = [
     {
@@ -122,12 +122,14 @@
   ];
 
   users.mutableUsers = false;
+  programs.zsh.enable = true;
 
   users.users.jbr = {
     isNormalUser = true;
     description = "Jesper B. Rosenkilde";
     extraGroups = ["wheel" "tss"];
     passwordFile = config.sops.secrets.jbr-password-hash.path;
+    shell = pkgs.zsh;
   };
 
   system.stateVersion = "22.11";

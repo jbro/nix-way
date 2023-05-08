@@ -48,7 +48,7 @@
       "jbr@iota" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs;};
-        modules = [./home-manager/iota/jbr.nix];
+        modules = [./users/jbr.nix];
       };
     };
     diskoConfigurations = {"iota" = import ./hosts/iota/disko.nix;};
