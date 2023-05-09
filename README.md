@@ -31,8 +31,6 @@ Install NixOS:
 ### NixOS
 
 - test vm in flake
-- binary caches
-- Investigate overlay to only build the nerd fonts that I use
 - Get btrfs based ephemereal root working
     - https://discourse.nixos.org/t/impermanence-vs-systemd-initrd-w-tpm-unlocking/25167/2
 - Get btrfs subvolume persistence working for directories
