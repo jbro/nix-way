@@ -8,7 +8,7 @@ to nixvana ...
 
 Create a NixOS install iso:
 
-    $ nix build github:jbro/nix-way#install-iso
+    $ nix build github:jbro/nix-way#generate-install-iso
 
 ### iota (GPD Pocket 3)
 
@@ -30,26 +30,22 @@ Install NixOS:
 
 ### NixOS
 
-    * Investigate overlay to only build the nerd fonts that I use
-    * Get btrfs based ephemereal root working
-        * https://discourse.nixos.org/t/impermanence-vs-systemd-initrd-w-tpm-unlocking/25167/2
-    * Get btrfs subvolume persistence working for directories
-        * Get `cp --reflink=always` persistence working for files
-
-### Install
-
-    * Move secure boot keys into sops
-    * Create USB media that can boot with secure boot my my cutsom keys
+- test vm in flake
+- binary caches
+- Investigate overlay to only build the nerd fonts that I use
+- Get btrfs based ephemereal root working
+    - https://discourse.nixos.org/t/impermanence-vs-systemd-initrd-w-tpm-unlocking/25167/2
+- Get btrfs subvolume persistence working for directories
+    - Get `cp --reflink=always` persistence working for files
 
 ### Iota
 
-    * Homemanager
-        * Window manager of some sort
-        * Look at stylix
-        * port zsh
-        * port vimrc ?
-    * Plymouth
-    * Disable sshd
+- Homemanager
+    - Look at stylix
+    - port zsh
+    - port vimrc ?
+- Plymouth
+- Disable sshd
 
 ## Resources
 
