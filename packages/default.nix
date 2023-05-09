@@ -18,4 +18,5 @@
   unwrap-sops-key = import ./unwrap-sops-key.nix {inherit pkgs self;};
   wrap-secureboot-keys = import ./wrap-secureboot-keys.nix {inherit pkgs;};
   unwrap-secureboot-keys = import ./unwrap-secureboot-keys.nix {inherit pkgs self;};
+  fixup-nix = import ./fixup-nix.nix {inherit pkgs;};
 }
