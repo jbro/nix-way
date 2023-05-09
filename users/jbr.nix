@@ -1,6 +1,9 @@
 {
   pkgs,
   inputs,
+  config,
+  lib,
+  secrets,
   ...
 }: {
   imports = [
@@ -30,6 +33,9 @@
 
   programs.bash.enable = true;
   programs.firefox.enable = true;
+
+  home.file.".ssh/id_ed25519".source = config.lib.file.mkOutOfStoreSymlink secrets."jbr-ssh/priv".path;
+  home.file.".ssh/id_ed25519.pub".source = config.lib.file.mkOutOfStoreSymlink secrets."jbr-ssh/pub".path;
 
   systemd.user.startServices = "sd-switch";
 }

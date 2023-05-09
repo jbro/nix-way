@@ -84,13 +84,11 @@
         owner = "jbr";
         group = "users";
         mode = "600";
-        path = "/home/jbr/.ssh/id_ed25519.pub";
       };
       "jbr-ssh/priv" = {
         owner = "jbr";
         group = "users";
         mode = "600";
-        path = "/home/jbr/.ssh/id_ed25519";
       };
     };
   };
@@ -142,7 +140,10 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.jbr = import "${inputs.self}/users/jbr.nix" {inherit pkgs inputs;};
+  home-manager.extraSpecialArgs = let secrets = config.sops.secrets; in {inherit secrets;};
+  home-manager.users.jbr = {
+    imports =  [ "${inputs.self}/users/jbr.nix" ];
+  };
 
   security.sudo.extraRules = [
     {
