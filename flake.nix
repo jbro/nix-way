@@ -58,14 +58,12 @@
 
     apps =
       nixpkgs.lib.mapAttrs (
-        arch: pkgs:
-          nixpkgs.lib.mapAttrs (
+        arch: nixpkgs.lib.mapAttrs (
             name: pkg:
               if nixpkgs.lib.hasAttr "mainProgram" pkg.meta
-              then mkApp {pkg = pkg;}
+              then mkApp {inherit pkg;}
               else {}
           )
-          pkgs
       )
       self.packages;
   };

@@ -1,4 +1,4 @@
-{...}: let
+_: let
   efi-part-end = "513MiB";
 in {
   disko.devices = {

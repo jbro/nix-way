@@ -5,7 +5,7 @@
   ...
 }: {
   generate-install-iso = inputs.nixos-generators.nixosGenerate {
-    system = pkgs.system;
+    inherit (pkgs) system;
     specialArgs = {inherit pkgs inputs;};
     modules = [./generate-install-iso.nix];
     format = "install-iso";
