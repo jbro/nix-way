@@ -25,9 +25,6 @@
     self,
     nixpkgs,
     nixos-hardware,
-    disko,
-    sops-nix,
-    nixos-generators,
     home-manager,
     ...
   } @ inputs: let
