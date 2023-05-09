@@ -4,10 +4,7 @@
   ...
 }: {
   imports = [
-    ./features/bash.nix
-    ./features/firefox.nix
     ./features/git.nix
-    ./features/home-manager.nix
     ./features/kitty.nix
     ./features/neovim.nix
     ./features/sway.nix
@@ -28,6 +25,11 @@
   ];
 
   fonts.fontconfig.enable = true;
+
+  programs.home-manager.enable = true;
+
+  programs.bash.enable = true;
+  programs.firefox.enable = true;
 
   systemd.user.startServices = "sd-switch";
 }
