@@ -58,7 +58,8 @@
 
     apps =
       nixpkgs.lib.mapAttrs (
-        arch: nixpkgs.lib.mapAttrs (
+        arch:
+          nixpkgs.lib.mapAttrs (
             name: pkg:
               if nixpkgs.lib.hasAttr "mainProgram" pkg.meta
               then mkApp {inherit pkg;}
