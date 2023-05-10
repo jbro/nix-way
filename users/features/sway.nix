@@ -26,6 +26,14 @@
           transform = "90";
         };
       };
+      input = {
+        "10182:275:GXTP7380:00_27C6:0113_Stylus" = {
+          "calibration_matrix" = "0 1 0 -1 0 1";
+        };
+        "10182:275:GXTP7380:00_27C6:0113" = {
+          "calibration_matrix" = "0 1 0 -1 0 1";
+        };
+      };
     };
   };
 }
