@@ -17,6 +17,8 @@
       keybindings = lib.mkOptionDefault {
         "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl s 10%-";
         "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl s +10%";
+        "${modifier}+Left" = "workspace prev";
+        "${modifier}+Right" = "workspace next";
       };
       output = {
         "DSI-1" = {
