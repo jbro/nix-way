@@ -8,6 +8,12 @@
     brightnessctl
   ];
 
+  home.pointerCursor = {
+    name = "Adwaita";
+    package = pkgs.gnome.adwaita-icon-theme;
+    size = 32;
+  };
+
   wayland.windowManager.sway = {
     enable = true;
     systemdIntegration = true;
