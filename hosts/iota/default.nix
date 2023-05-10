@@ -146,9 +146,9 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.extraSpecialArgs = let secrets = config.sops.secrets; in {inherit secrets;};
+  home-manager.extraSpecialArgs = let inherit (config.sops) secrets; in {inherit secrets;};
   home-manager.users.jbr = {
-    imports =  [ "${inputs.self}/users/jbr.nix" ];
+    imports = ["${inputs.self}/users/jbr.nix"];
   };
 
   security.sudo.extraRules = [
