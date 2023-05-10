@@ -122,6 +122,12 @@
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
 
+  hardware.sensor.iio.enable = true;
+  services.udev.extraHwdb = ''
+    sensor:modalias:*
+      ACCEL_MOUNT_MATRIX=-0, -1, 0; -1, 0, 0; 0, 0, 1
+  '';
+
   services = {
     openssh = {
       enable = true;

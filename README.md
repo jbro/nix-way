@@ -1,6 +1,6 @@
 # This is the way
 
-to nixvana ...
+to Nixvana ...
 
 ## Install
 
@@ -42,6 +42,7 @@ Install NixOS:
     - Look at stylix
     - port zsh
     - port vimrc ?
+- sway + iio
 - Plymouth
 - Disable sshd
 
