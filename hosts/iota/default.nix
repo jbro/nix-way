@@ -22,8 +22,6 @@
     inputs.lanzaboote.nixosModules.lanzaboote
 
     inputs.home-manager.nixosModules.home-manager
-
-    "${inputs.self}/modules/btrfs_swap.nix"
   ];
 
   boot.kernelParams = [
@@ -137,7 +135,6 @@
       };
     };
     nscd.enableNsncd = true;
-    btrfs-swapfile.enable = true;
   };
 
   programs.git.enable = true;
