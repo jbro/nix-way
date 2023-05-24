@@ -20,12 +20,17 @@
     stateVersion = "22.11";
     sessionVariables = {
       LIBSEAT_BACKEND = "logind";
+      MOZ_ENABLE_WAYLAND = 1;
+      XDG_CURRENT_DESKTOP = "sway";
+      NIXOS_OZONE_WL = "1";
     };
   };
 
   home.packages = with pkgs; [
     ripgrep
     mullvad-vpn
+    pavucontrol
+    slack
   ];
 
   fonts.fontconfig.enable = true;
@@ -33,7 +38,14 @@
   programs.home-manager.enable = true;
 
   programs.bash.enable = true;
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+      extraPolicies = {
+        ExtensionSettings = {};
+      };
+    };
+  };
 
   home.file.".ssh/id_ed25519".source = config.lib.file.mkOutOfStoreSymlink secrets."jbr-ssh/priv".path;
   home.file.".ssh/id_ed25519.pub".source = config.lib.file.mkOutOfStoreSymlink secrets."jbr-ssh/pub".path;

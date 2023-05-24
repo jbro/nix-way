@@ -14,6 +14,14 @@
     size = 32;
   };
 
+  services = {
+    xcape = {
+      enable = true;
+      mapExpression = {
+      };
+    };
+  };
+
   wayland.windowManager.sway = {
     enable = true;
     systemdIntegration = true;
@@ -40,7 +48,7 @@
           "calibration_matrix" = "0 1 0 -1 0 1";
         };
         "9610:12:HAILUCK_CO.,LTD_USB_KEYBOARD" = {
-          "xkb_options" = "caps:escape";
+          "xkb_options" = "caps:hyper,compose:lwin,shift:both_capslock";
         };
       };
     };
