@@ -166,7 +166,7 @@
   users.users.jbr = {
     isNormalUser = true;
     description = "Jesper B. Rosenkilde";
-    extraGroups = ["wheel" "tss"];
+    extraGroups = ["wheel" "tss" "dialout"];
     passwordFile = config.sops.secrets.jbr-password-hash.path;
     shell = pkgs.zsh;
   };
