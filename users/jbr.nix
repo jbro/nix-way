@@ -25,6 +25,7 @@
 
   home.packages = with pkgs; [
     ripgrep
+    mullvad-vpn
   ];
 
   fonts.fontconfig.enable = true;

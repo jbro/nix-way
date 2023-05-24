@@ -135,6 +135,7 @@
       };
     };
     nscd.enableNsncd = true;
+    mullvad-vpn.enable = true;
   };
 
   programs.git.enable = true;
