@@ -29,8 +29,13 @@
     "video=DSI-1:panel_orientation=right_side_up"
   ];
 
-  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "usbhid" "thunderbolt"];
+  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "usbhid" "thunderbolt" "i915"];
+  boot.initrd.kernelModules = ["i915"];
   boot.kernelModules = ["kvm-intel" "ssd_mod"];
+
+  boot.plymouth = {
+    enable = true;
+  };
 
   fonts.fontconfig = {
     subpixel.rgba = "vbgr";
