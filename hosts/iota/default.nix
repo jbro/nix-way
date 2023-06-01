@@ -136,8 +136,8 @@
     openssh = {
       enable = true;
       settings = {
-        permitRootLogin = "no";
-        passwordAuthentication = false;
+        PermitRootLogin = lib.mkDefault "no";
+        PasswordAuthentication = lib.mkDefault false;
       };
     };
     nscd.enableNsncd = true;
