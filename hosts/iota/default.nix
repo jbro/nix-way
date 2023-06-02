@@ -27,6 +27,10 @@
   boot.kernelParams = [
     "fbcon=rotate:1"
     "video=DSI-1:panel_orientation=right_side_up"
+    "quiet"
+    "loglevel=3"
+    "systemd.show_status=auto"
+    "rd.udev.log_level=3"
   ];
 
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "usbhid" "thunderbolt" "i915"];
