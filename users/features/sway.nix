@@ -39,8 +39,8 @@
         "10182:275:GXTP7380:00_27C6:0113" = {
           "calibration_matrix" = "0 1 0 -1 0 1";
         };
-        "9610:12:HAILUCK_CO.,LTD_USB_KEYBOARD" = {
-          "xkb_options" = "caps:hyper,compose:lwin,shift:both_capslock";
+        "1:1:kanata" = {
+          "xkb_options" = "compose:menu";
         };
       };
     };

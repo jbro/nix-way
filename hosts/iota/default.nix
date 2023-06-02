@@ -158,10 +158,10 @@
       keyboards."iota-internal" = {
         devices = ["/dev/input/by-id/usb-HAILUCK_CO._LTD_USB_KEYBOARD-event-kbd"];
         config = ''
-          (defsrc caps)
+          (defsrc caps lmeta)
           (defalias che (tap-hold 200 200 esc lmeta))
           (deflayer default
-            @che)
+            @che menu)
         '';
       };
     };
