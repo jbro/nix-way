@@ -14,14 +14,6 @@
     size = 32;
   };
 
-  services = {
-    xcape = {
-      enable = true;
-      mapExpression = {
-      };
-    };
-  };
-
   wayland.windowManager.sway = {
     enable = true;
     systemdIntegration = true;
