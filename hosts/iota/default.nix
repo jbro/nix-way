@@ -35,6 +35,7 @@
 
   boot.plymouth = {
     enable = true;
+    theme = "breeze";
   };
 
   fonts.fontconfig = {
