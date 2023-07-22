@@ -5,7 +5,7 @@
 }: {
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_2;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_3;
 
   networking.wireless.enable = false;
   networking.wireless.iwd.enable = true;
